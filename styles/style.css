@@ -32,13 +32,14 @@ ul li{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
+    margin-top: 8px;
 }
 .search-bar{
     display: grid;
     grid-template-columns: 5fr 2fr;
-    height: 50%;
     align-items: center;
     gap: 50px;
+    justify-content: start;
 }
 .search-container{
     display: grid;
@@ -49,14 +50,20 @@ ul li{
 }
 .user{
     display: grid;
-    grid-template-columns: 1fr .5fr 1fr;
+    grid-template-columns: repeat(3,fit-content(110px));
     align-items: center;
     gap: 16px;
+    justify-content: end;
+    margin-right: 16px;
 }
 .icon{
     width: 50px;
-    aspect-ratio: 1/1;
+    height: 50px;
     background-color: aqua;
+}
+.icon>img{
+    width:50px;
+    aspect-ratio: 1/1;
 }
 .username{
     font-weight: bold;
@@ -64,18 +71,26 @@ ul li{
 .welcome{
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    align-items: center;
 }
 .welcome>.user{
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2,fit-content(55px));
+    grid-template-columns: repeat(2,fit-content(255px));
     gap: 8px;
+    justify-content: start;
+    margin-left: 16px;
 }
 .welcome>.user>.icon{
     width:75px;
+    height: 75px;
     grid-column: 1/2;
     grid-row: 1/3;
     justify-self: end;
+}
+.welcome>.user>.icon>img{
+    width: 75px;
+    aspect-ratio: 1/1;
 }
 .welcome>.user>.welcome-user{
     align-self: self-end;
@@ -87,10 +102,11 @@ ul li{
 }
 .create{
     display: grid;
-    align-self: center;
-    justify-self: center;
-    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: end;
+    grid-template-columns: repeat(3,clamp(50px,70px,100px));
     gap: 50px;
+    margin-right: 16px;
 }
 
 .main-content{
@@ -99,6 +115,7 @@ ul li{
     grid-template: 1fr 1fr / 3fr 1fr;
     padding: 16px;
     gap: 16px;
+    row-gap: 32px;
 }
 .projects{
     grid-column: 1 / 2;
@@ -106,6 +123,7 @@ ul li{
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
+    grid-template-rows: fit-content(40px) 1fr;
 }
 .title{
     font-size: 1.5rem;
@@ -153,6 +171,7 @@ ul li{
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
+    grid-template-rows: fit-content(40px) 1fr;
 }
 .article-container{
     display: grid;
@@ -182,8 +201,8 @@ ul li{
 .trending{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr;
     gap: 16px;
+    grid-template-rows: fit-content(40px) 1fr;
 }
 .trending-container{
     display: grid;
